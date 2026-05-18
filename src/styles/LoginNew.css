@@ -1,0 +1,272 @@
+/* src/styles/LoginNew.css */
+.login-modern-root {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Light Theme Radial Gradient - will blend with bg.png */
+    background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.8), rgba(226, 232, 240, 0.8));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+/* Background effects */
+.login-bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+    opacity: 0.3;
+    /* Increased transparency for light theme */
+}
+
+.shape-1 {
+    width: 500px;
+    height: 500px;
+    background: #bfdbfe;
+    /* Light blue */
+    top: -100px;
+    left: -100px;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background: #d8b4fe;
+    /* Light purple */
+    bottom: -50px;
+    right: -50px;
+}
+
+.login-modern-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 650px;
+    /* Glass effect for light theme */
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 10;
+    position: relative;
+}
+
+/* Left Side - 3D Showcase */
+.login-showcase {
+    flex: 1.2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+}
+
+.showcase-header {
+    z-index: 10;
+}
+
+.showcase-logo {
+    height: 40px;
+    width: auto;
+    margin-bottom: 2rem;
+}
+
+.showcase-text h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    /* Dark text for light theme */
+    color: #1e293b;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    background: #0f4c81;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.showcase-text p {
+    font-size: 1.1rem;
+    color: #000000;
+    /* Slate-500 */
+    max-width: 80%;
+    line-height: 1.6;
+}
+
+.scene-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+/* Right Side - Form */
+.login-form-wrapper {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.6);
+    /* White background for form */
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.login-form-content {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-header-right {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.login-header-right h2 {
+    font-size: 2rem;
+    color: #1e293b;
+    /* Slate-800 */
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.login-header-right p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* Form Styles Override for Light Theme */
+.field-wrapper {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-color: #cbd5e1 !important;
+    padding: 0.8rem 1rem !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.field-wrapper:focus-within {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+.field-label {
+    color: #475569 !important;
+    /* Slate-600 */
+}
+
+.field-input {
+    background: transparent !important;
+    color: #1e293b !important;
+    /* Slate-800 */
+    font-size: 1rem !important;
+}
+
+.field-input::placeholder {
+    color: #94a3b8 !important;
+    /* Slate-400 */
+}
+
+.btn-primary {
+    background: #0f4c81 !important;
+    font-size: 1rem !important;
+    padding: 0.9rem !important;
+    margin-top: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2), 0 2px 4px -1px rgba(37, 99, 235, 0.1);
+}
+
+.btn-primary:hover {
+    opacity: 0.95;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3), 0 4px 6px -2px rgba(37, 99, 235, 0.15);
+}
+
+.forgot-link {
+    color: #2563eb !important;
+    font-weight: 600 !important;
+}
+
+.forgot-link:hover {
+    color: #1d4ed8 !important;
+}
+
+.powered-by {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* Logos */
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Vertically align logos */
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.partner-logo {
+    height: 50px;
+    opacity: 1;
+    /* Removed invert filter to show original logo colors for light theme */
+    /* If logos need to be monochrome dark, use brightness(0) */
+    /* filter: brightness(0); */
+    transition: opacity 0.3s;
+}
+
+.partner-logo:hover {
+    opacity: 0.8;
+}
+
+
+.partner-logo2 {
+    height: 80px;
+    opacity: 1;
+    /* Removed invert filter to show original logo colors for light theme */
+    /* If logos need to be monochrome dark, use brightness(0) */
+    /* filter: brightness(0); */
+    transition: opacity 0.3s;
+}
+
+.partner-logo:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .login-modern-container {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+    }
+
+    .login-showcase {
+        padding: 2rem;
+        min-height: 300px;
+    }
+
+    .showcase-text h1 {
+        font-size: 2rem;
+    }
+
+    .login-form-wrapper {
+        padding: 2rem;
+    }
+}

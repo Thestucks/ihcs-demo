@@ -1,0 +1,217 @@
+/* src/index.css */
+
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --gradient-start: #2563eb;
+  --gradient-end: #7c3aed;
+  --bg-body: #e5ebf5;
+  --card-bg: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --radius-lg: 1.25rem;
+  --shadow-lg: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  --transition-fast: 0.2s ease;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: linear-gradient(to bottom, #f3f4f6, var(--bg-body));
+  color: var(--text-main);
+}
+
+/* Layout halaman login */
+.login-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Logo LGbank */
+.login-logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 150px;
+  height: auto;
+}
+
+/* Logo IHCS */
+.login-logo-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 220px;
+  height: auto;
+}
+
+/* Card utama */
+.login-card {
+  width: 100%;
+  max-width: 1100px;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Bagian kiri (ilustrasi) */
+.login-left {
+  display: none;
+  flex: 1;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #f9fafb, #e5e7eb);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.login-left-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.login-left-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Bagian kanan (form) */
+.login-right {
+  flex: 1;
+  padding: 2rem 1.75rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-right-inner {
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Field */
+.field-group {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.field-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.75rem;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.field-wrapper:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+}
+
+.field-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.field-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Link lupa password */
+.forgot-link {
+  display: inline-flex;
+  font-size: 0.75rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Tombol */
+.btn-primary {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-image: linear-gradient(to right,
+      var(--gradient-start),
+      var(--gradient-end));
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast), opacity var(--transition-fast);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary:hover {
+  opacity: 0.94;
+  transform: translateY(-1px);
+  box-shadow: 0 18px 28px rgba(37, 99, 235, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+}
+
+/* Responsif */
+@media (min-width: 768px) {
+  .login-card {
+    flex-direction: row;
+  }
+
+  .login-left {
+    display: flex;
+  }
+
+  .login-right {
+    padding: 2.5rem 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-right-inner {
+    max-width: none;
+  }
+
+  .login-card {
+    border-radius: 1rem;
+  }
+}
